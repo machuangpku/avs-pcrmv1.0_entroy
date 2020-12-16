@@ -202,7 +202,65 @@ Int TDecBacTop::parseAttr(const int componentId) {
       if (!m_bac->biari_decode_symbol(p_aec, &p_aec->syn_ctx.ctx_attr_residual_eq2[ctx_id])) {
 
 		  if (!m_bac->biari_decode_symbol(p_aec, &p_aec->syn_ctx.ctx_attr_residual_eq3[ctx_id])){
-          val = m_bac->sbac_read_ue_ep(p_aec) + 4;
+           if (!m_bac->biari_decode_symbol(p_aec, &p_aec->syn_ctx.ctx_attr_residual_eq4[ctx_id])) {
+             if (!m_bac->biari_decode_symbol(p_aec, &p_aec->syn_ctx.ctx_attr_residual_eq5[ctx_id])) {
+               if (!m_bac->biari_decode_symbol(p_aec,
+                                               &p_aec->syn_ctx.ctx_attr_residual_eq6[ctx_id])) {
+                 if (!m_bac->biari_decode_symbol(p_aec,
+                                                 &p_aec->syn_ctx.ctx_attr_residual_eq7[ctx_id])) {
+                   if (!m_bac->biari_decode_symbol(p_aec,
+                                                   &p_aec->syn_ctx.ctx_attr_residual_eq8[ctx_id])) {
+                     if (!m_bac->biari_decode_symbol(
+                           p_aec, &p_aec->syn_ctx.ctx_attr_residual_eq9[ctx_id])) {
+                       if (!m_bac->biari_decode_symbol(
+                             p_aec, &p_aec->syn_ctx.ctx_attr_residual_eq10[ctx_id])) {
+                         if (!m_bac->biari_decode_symbol(
+                               p_aec, &p_aec->syn_ctx.ctx_attr_residual_eq11[ctx_id])) {
+                           if (!m_bac->biari_decode_symbol(
+                                 p_aec, &p_aec->syn_ctx.ctx_attr_residual_eq12[ctx_id])) {
+
+							    val = m_bac->sbac_read_ue_ep(p_aec) + 13;
+                           } else {
+                             val = 12;
+                           }
+		 
+						 } else {
+                           val = 11;
+                         }
+                       } else {
+                         val = 10;
+                       }
+
+
+					 } else {
+                       val = 9;
+                     }
+
+                   } else {
+                     val = 8;
+                   }
+                  
+                 } 
+				 else {
+                   val = 7;
+                 }
+                 
+               } 
+			   else {
+                 val = 6;
+               }
+               
+          } 
+		  
+		  
+		  else {
+            val = 5;
+          }
+          
+          } 
+		   else {
+            val = 4;
+          }
         } 
 		  else {val = 3;}
       } 
