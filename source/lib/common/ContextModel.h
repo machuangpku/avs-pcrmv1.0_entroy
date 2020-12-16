@@ -70,6 +70,7 @@ typedef struct ctx_set_t {
   context_t ctx_attr_residual_eq1[3];
   context_t ctx_attr_residual_eq2[3];
   context_t ctx_attr_residual_eq3[3];
+  context_t ctx_attr_residual_eq4[3];
 
   context_t b0[NUM_OCCUPANCY_CTX];
   context_t b1[NUM_OCCUPANCY_CTX];

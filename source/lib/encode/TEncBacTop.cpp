@@ -338,13 +338,16 @@ Void TEncBacTop::codeAttributerResidual(const int64_t& delta, const int componen
       if (abs_delta > 2) {
         m_bac->biari_encode_symbol_aec(p_aec, abs_delta == 3,
                                        &p_aec->p_ctx_set->ctx_attr_residual_eq3[ctx_id]);
+        if (abs_delta > 3) {
+          m_bac->biari_encode_symbol_aec(p_aec, abs_delta == 4,
+                                         &p_aec->p_ctx_set->ctx_attr_residual_eq4[ctx_id]);
       
-		if (abs_delta > 3) {
-        m_bac->sbac_write_ue_ep(&m_bitStream, abs_delta - 4, p_aec);
+		  if (abs_delta > 4) {
+            m_bac->sbac_write_ue_ep(&m_bitStream, abs_delta - 5, p_aec);
       }
     }
   }
-	}
+	}}
   m_bitStream.cur = p_aec->p;
 }
 
